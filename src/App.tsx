@@ -1,25 +1,8 @@
-import logo from "./logo.svg";
-import style from "./App.module.scss";
+import RoutesApp from './routes/Routes';
+import './assets/scss/Saas-Dark.scss';
 
 function App() {
-  return (
-    <div className={style.App}>
-      <header className={style["App-header"]}>
-        <img src={logo} className={style["App-logo"]} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={style["App-link"]}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RoutesApp />;
 }
 
 export default App;
