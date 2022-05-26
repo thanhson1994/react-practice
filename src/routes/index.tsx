@@ -8,45 +8,10 @@ const OptimizePerformance = React.lazy(
   () => import('../pages/optimize-perfomance/OptimizePerfomance')
 );
 
-// const otherPublicRoutes = [
-//   {
-//     path: '/home',
-//     name: 'home',
-//     component: HomePage,
-//     route: Route
-//   },
-//   {
-//     path: '/todos',
-//     name: 'todos',
-//     component: Todos,
-//     route: Route
-//   },
-//   {
-//     path: '/optimize',
-//     name: 'optimize',
-//     component: OptimizePerformance,
-//     route: Route
-//   }
-// ];
+const Immutable = React.lazy(() => import('../pages/immutable/Immutable'));
+const DebouncingInput = React.lazy(() => import('../pages/debouncingInput/DebouncingInput'));
+const CarouselExample = React.lazy(() => import('../pages/CarouselExample/CarouselExample'));
 
-// const flattenRoutes = (routes: any) => {
-//   let flatRoutes: any = [];
-
-//   routes = routes || [];
-//   routes.forEach((item: any) => {
-//     flatRoutes.push(item);
-
-//     if (typeof item.children !== 'undefined') {
-//       flatRoutes = [...flatRoutes, ...flattenRoutes(item.children)];
-//     }
-//   });
-//   return flatRoutes;
-// };
-
-// const publicRoutes = [...otherPublicRoutes];
-// const publicProtectedFlattenRoutes = flattenRoutes([...publicRoutes]);
-
-// export { publicProtectedFlattenRoutes };
 type LoadComponentProps = {
   // eslint-disable-next-line no-undef
   component: React.LazyExoticComponent<() => JSX.Element>;
@@ -78,6 +43,23 @@ const AllRoutes = () => {
               element: <LoadComponent component={OptimizePerformance} />
             }
           ]
+        },
+        {
+          path: '/immutable',
+          children: [
+            {
+              path: '',
+              element: <LoadComponent component={Immutable} />
+            }
+          ]
+        },
+        {
+          path: '/debouncingInput',
+          element: <LoadComponent component={DebouncingInput} />
+        },
+        {
+          path: '/carouselExample',
+          element: <LoadComponent component={CarouselExample} />
         }
       ]
     }

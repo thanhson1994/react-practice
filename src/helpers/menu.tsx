@@ -5,14 +5,32 @@ const getMenuItems = (): MenuItemType[] => {
   return [
     {
       key: 'apps-management',
-      label: 'home',
+      label: 'React Example',
       isTitle: false,
       icon: 'uil-suitcase',
       children: [
         {
-          key: 'management-organizations',
-          label: 'something',
-          url: '/something',
+          key: 'optimize',
+          label: 'Optimize',
+          url: '/optimize',
+          parentKey: 'apps-management'
+        },
+        {
+          key: 'immutable',
+          label: 'Immutable Example',
+          url: '/immutable',
+          parentKey: 'apps-management'
+        },
+        {
+          key: 'DebouncingInput',
+          label: 'DebouncingInput Example',
+          url: '/debouncingInput',
+          parentKey: 'apps-management'
+        },
+        {
+          key: 'CarouselExample',
+          label: 'CarouselExample',
+          url: '/carouselExample',
           parentKey: 'apps-management'
         }
       ]
